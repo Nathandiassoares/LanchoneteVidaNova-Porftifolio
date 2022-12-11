@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Roboto&display=s=swap');
+* {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'roboto',sans-serif;
+}
+
+:root {
+  --imagemCabecalhoFundo:url(/imagens/fundo/fundoCabecalho.jpg);
+}
+
+
+
+

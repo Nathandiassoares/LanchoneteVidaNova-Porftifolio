@@ -1,0 +1,18 @@
+.rodape {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #fad54f;
+    background-color: #e66317;
+    padding: 1rem;
+}
+
+.rodape__texto {
+    color: white;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.rodape__link {
+    color: white;
+    text-decoration: none;
+}
