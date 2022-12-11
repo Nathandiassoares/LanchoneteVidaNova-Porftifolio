@@ -1,5 +1,5 @@
 .cabecalho {
-    background-image: var(--imagemCabecalhoFundo);
+    background-image:url(/imagens/fundo/fundoCabecalho.jpg);
     background-size: cover;
     background-position: bottom;
     display: flex;
