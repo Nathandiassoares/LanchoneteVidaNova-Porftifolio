@@ -1,2 +1,2 @@
-# LanchoneteVidaNova-Porftifolio
- Escolha seus lanches de maneira fácil e rápida na lanchonete Vida Nova
+# Lanchonete Vida Nova
+ Venha conhecer nossos lanches artesanais pensados em você, Simplificação no seu pedido é combos que vão deixar você com água na boaca.
