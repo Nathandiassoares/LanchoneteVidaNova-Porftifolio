@@ -1,10 +1,11 @@
 .cardapio__itens {
+    display: flex;
     text-align: center;
     margin: 1rem auto;
     padding: 1rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.337);
-    width: 21rem;
-    height: 21rem;
+    width: 24rem;
+    height: 24rem;
     flex-direction: column;
     align-items: center;
   }
@@ -33,3 +34,24 @@
     text-shadow: 1px 1px 2px black;
   }
   
+
+  .cardapio__botao-pedir {
+    font-size: 2rem;
+    padding: .6rem;
+    margin: .5rem;
+    
+    background-color:#e66317;
+    color: white;
+    
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 3px #4d1e029d;
+
+    transition: .3s;
+    
+  }
+
+  .cardapio__botao-pedir:hover {
+    cursor: pointer;
+    background-color: #993b05;
+  }
