@@ -42,13 +42,14 @@
     
     background-color:#e66317;
     color: white;
+
+    text-decoration: none;
     
     border: none;
     border-radius: 1rem;
     box-shadow: 2px 2px 3px #4d1e029d;
 
     transition: .3s;
-    
   }
 
   .cardapio__botao-pedir:hover {
