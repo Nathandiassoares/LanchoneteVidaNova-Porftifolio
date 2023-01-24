@@ -1,16 +1,84 @@
 const botaoPedirLanches = document.querySelectorAll('.cardapio__botao-pedir')
-const conteudoPaginaInicial = document.querySelector('.conteudo')
+const conteudo = document.querySelector('.conteudo')
 
-let array1 = []
+let lanchePedido = []
 
-botaoPedirLanches.forEach((Element)=> {
-  Element.addEventListener('click',(event)=>{
-
-    if(true){
-      array1.push(Element)
-    }
-  })
+botaoPedirLanches.forEach((Element) => {
+    Element.addEventListener('click', (event) => {
+      lanchePedido.push(Element)
+      conteudo.classList.add("desativa")
+      pedidoTexto.innerHTML = `ola ${lanchePedido.length}`
+    })
 })
+
+
+const pedidoTexto = document.querySelector('.pedido__texto')
+const teste = document.querySelector('.pedido')
+teste.classList.add("ativo")
+
+
+
+
+//---Aumenta diminiu quantidade---
+
+// const adicionarQuantidade = document.querySelector('.adicionar')
+// const diminuirQuantiade = document.querySelector('.diminuir')
+// let caixaQuantiade = document.querySelector('.conteudo__quantiade-Pedida')
+// let caixaQuantiadeConvertida = Number(caixaQuantiade.value)
+
+// adicionarQuantidade.addEventListener('click',()=>{
+//   if(caixaQuantiadeConvertida >= 0){
+//     caixaQuantiadeConvertida++
+//     caixaQuantiade.value = caixaQuantiadeConvertida
+//   }else {
+//     caixaQuantiade.value = 0
+//   }
+  
+// })
+
+// diminuirQuantiade.addEventListener('click',()=> {
+//     if(caixaQuantiadeConvertida >= 1){
+//     caixaQuantiadeConvertida--
+//     caixaQuantiade.value=caixaQuantiadeConvertida
+//   } else {
+//     caixaQuantiade.value = 0
+//   }
+  
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const botaoPedirLanches = document.querySelectorAll('.cardapio__botao-pedir')
+// const conteudoPaginaInicial = document.querySelector('.conteudo')
+
+// let array1 = []
+
+// const titulo = document.querySelector('.conteudo__titulo')
+// console.log(titulo)
+// titulo.addEventListener('click',(event)=>{
+//   if(true){
+//     console.log(array1)
+//   }
+// })
+
+// botaoPedirLanches.forEach((Element)=> {
+//   Element.addEventListener('click',(event)=>{
+
+//     if(true){
+//       array1.push(Element)
+//     }
+//   })
+// })
 
 
 
@@ -57,20 +125,20 @@ botaoPedirLanches.forEach((Element)=> {
         
         
         
-//         // conteudoPaginaInicial.innerHTML = `
-//         // <main class="conteudo">
-//         // <h2 class="conteudo__titulo">Compre já ou adicione mais opções</h2>
-//         // <section class="cardapio__itens">
-//         // <h3 class="cardapio__titulo">${TiutloDoLanche}</h1>
-//         // <img class="cardapio__imagens" src="${imagemDolanche}" alt="">
-//         // <label class="cardapio__descricao" for="iquantidade">Quantidade</label>
-//         // <input class="conteudo__quantiade-Pedida" type="number" name="quantidade" id="iquantidade" value="${quantidade}"> 
-//         // <span data-adicionar>+</span>
-//         // <p class="cardapio__descricao">Valor total:${valorDoLanche}</p>
+        // conteudoPaginaInicial.innerHTML = `
+        // <main class="conteudo">
+        // <h2 class="conteudo__titulo">Compre já ou adicione mais opções</h2>
+        // <section class="cardapio__itens">
+        // <h3 class="cardapio__titulo">${TiutloDoLanche}</h1>
+        // <img class="cardapio__imagens" src="${imagemDolanche}" alt="">
+        // <label class="cardapio__descricao" for="iquantidade">Quantidade</label>
+        // <input class="conteudo__quantiade-Pedida" type="number" name="quantidade" id="iquantidade" value="${quantidade}"> 
+        // <span data-adicionar>+</span>
+        // <p class="cardapio__descricao">Valor total:${valorDoLanche}</p>
         
-//         // </section>
-//         // </main>
-//         // `
+        // </section>
+        // </main>
+        // `
         
         
        

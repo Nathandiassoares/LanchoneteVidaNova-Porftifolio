@@ -64,3 +64,15 @@ input[type=number]::-webkit-outer-spin-button,
 .conteudo__quantiade-Pedide {
     -webkit-appearance: none;
 }
+
+.pedido {
+    display:none;
+}
+
+.ativo {
+    display: block;
+}
+
+.desativa {
+    display: none;
+}
