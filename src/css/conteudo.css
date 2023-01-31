@@ -46,33 +46,3 @@
 
 
 
-.conteudo__quantiade-Pedida {
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    width: 2.3rem;
-    height: 2.3rem;
-    background-color: #e66317;
-    color: white;
-    text-align: center;
-
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button,
-.conteudo__quantiade-Pedide {
-    -webkit-appearance: none;
-}
-
-.pedido {
-    display:none;
-}
-
-.ativo {
-    display: block;
-}
-
-.desativa {
-    display: none;
-}

@@ -1,0 +1,139 @@
+/* reset botão */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+.conteudo__quantiade-Pedide {
+  -webkit-appearance: none;
+}
+
+
+/* Conteudo principal  */
+.pedido {
+  display: flex;
+  min-height: 100vh;
+  background-image: linear-gradient(190deg, #fad54f 0%, #e66317 100%);
+}
+
+/* fechar pedido */
+
+.pedido__fechar-pedido {
+  width: 22rem;
+  height: 22rem;
+  background-color: #9e4613;
+  margin: 1rem auto;
+  box-shadow: 2px 2px 4px #b44d12b9;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pedido__botao-fecharPedido {
+  font-size: 2rem;
+  padding: .5rem;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color:#e66317;
+}
+
+.pedido__botao-fecharPedido:hover {
+  cursor: pointer;
+  
+}
+
+/* lista de itens a serem comprados  */
+.pedido__titulo{
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.pedido__lista-itens {
+  width: 57rem;
+  background-color: #e66317;
+  margin: 1rem;
+  box-shadow: 2px 2px 4px #b44d12b9;
+}
+
+
+
+.pedido__imagens {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+}
+
+/* Estilização dos itens  */
+
+
+.pedido__item {
+  display: flex;
+  padding: 2rem;
+  width: 90%;
+  border-top: 1px solid #9e4613;
+  margin: auto;
+}
+
+.pedido__itens-titulo {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.555);
+  font-size: 1.7rem;
+}
+
+.pedido__itens {
+  margin-left: 2rem;
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+
+
+.conteudo__quantiade-Pedida {
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: #e66317;
+  color: white;
+  text-align: center;
+
+}
+
+.pedido__quantidade {
+  background-color: #b44e12;
+  width: 9rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  padding: 0.2rem;
+}
+
+.pedido__descricao {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.555);
+}
+
+.diminuir,
+.adicionar {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.555);
+  cursor: pointer;
+}
+
+
+.pedido__remover-item {
+  cursor: pointer;
+}
+

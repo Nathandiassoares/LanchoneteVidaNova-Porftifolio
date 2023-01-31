@@ -1,13 +1,22 @@
 const botaoPedirLanches = document.querySelectorAll('.cardapio__botao-pedir')
 const conteudo = document.querySelector('.conteudo')
+const pedido = document.querySelector('.escolhendo__lanche')
+const botoesCabecalho = document.querySelectorAll('cabecalho__itens')
 
 let lanchePedido = []
+
+botoesCabecalho.forEach((Element)=> {
+  Element.addEventListener('click',(event)=>{
+    conteudo.classList.add("escolhendo__lanche-lanches")
+    pedido.classList.add("escolhendo__lanche")
+  })
+})
 
 botaoPedirLanches.forEach((Element) => {
     Element.addEventListener('click', (event) => {
       lanchePedido.push(Element)
-      conteudo.classList.add("desativa")
-      pedidoTexto.innerHTML = `ola ${lanchePedido.length}`
+      conteudo.classList.add("fazendo_pedido-lanches")
+      pedido.classList.add("fazendo__pedido-pedidos")
     })
 })
 

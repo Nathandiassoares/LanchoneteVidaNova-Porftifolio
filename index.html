@@ -8,29 +8,30 @@
   <title>lanchonete Vida Nova</title>
   <link rel="shortcut icon" href="imagens/icon/icone.png" type="image/x-icon">
   <script src="https://unpkg.com/phosphor-icons"></script>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/cabecalho.css">
-  <link rel="stylesheet" href="css/conteudo.css">
-  <link rel="stylesheet" href="css/container-lanches.css">
-  <link rel="stylesheet" href="css/rodape.css">
-  <link rel="stylesheet" href="css/cardapio.css">
+  <link rel="stylesheet" href="./src/css/index.css">
+  <link rel="stylesheet" href="./src/css/cabecalho.css">
+  <link rel="stylesheet" href="./src/css/conteudo.css">
+  <link rel="stylesheet" href="./src/css/container-lanches.css">
+  <link rel="stylesheet" href="./src/css/rodape.css">
+  <link rel="stylesheet" href="./src/css/cardapio.css">
+  <link rel="stylesheet" href="./src/css/pedido.css">
 
 
 </head>
 
 <body class="corpo">
   <header class="cabecalho">
-    <img class="cabecalho__logo" src="imagens/icon/icone.png" alt="Logo da cabecalho">
+    <img class="cabecalho__logo" src="./src/assets/icon/icone.png" alt="Logo da cabecalho">
     <h1 class="cabecalho__titulo">Lanchonete Vida Nova</h1>
     <nav class="lanchhonete__menu">
       <ul class="cabecalho__lista">
-        <li><a class="cabecalho__itens" href="index.html">Lanches</a></li>
-        <li><a class="cabecalho__itens" href="Pages/index.html">Pedidos</a></li>
+        <li><a class="cabecalho__itens" href="#">Lanches</a></li>
+        <li><a class="cabecalho__itens" href="src/Pages/pedido/index.html">Pedidos</a></li>
         <li><a class="cabecalho__itens" href="#">Redes sociais</a></li>
       </ul>
     </nav>
   </header>
-  <main class="conteudo">
+  <main class="conteudo escolhendo__lanche-lanches">
     <h2 class="conteudo__titulo">Escolha seu lanche preferido</h2>
     <div class="input-wrapper">
       <label for="filter" class="sr-only">Filter</label>
@@ -40,7 +41,7 @@
     <section class="cardapio__lanches">
       <section class="cardapio__itens">
         <h3 class="cardapio__titulo">File de frango</h3>
-        <img class="cardapio__imagens" src="imagens/lanches/frango.jpg"
+        <img class="cardapio__imagens" src="./src/assets/lanches/frango.jpg"
           alt="hambuerguer de file de frango com pao alface e molho">
         <p class="cardapio__descricao">O melhor hambuerguer de file de frango com molho especial e picles</p>
         <a href="#" class="cardapio__botao-pedir">Pedir</a>
@@ -49,7 +50,7 @@
 
       <section class="cardapio__itens">
         <h3 class="cardapio__titulo">Carne ++ cheddar</h3>
-        <img class="cardapio__imagens" src="imagens/lanches/cheddar.jpg"
+        <img class="cardapio__imagens" src="./src/assets/lanches/cheddar.jpg"
           alt="hambuerguer com duas carnes cheddar bacon">
         <p class="cardapio__descricao">Pão brioche com duas carnes é muito cheddar</p>
         <a href="#" class="cardapio__botao-pedir">Pedir</a>
@@ -58,14 +59,14 @@
 
       <section class="cardapio__itens">
         <h3 class="cardapio__titulo">Duas carnes</h3>
-        <img class="cardapio__imagens" src="imagens/lanches/duasCarnes.jpg" alt="hambuerguer com duas carnes grandes">
+        <img class="cardapio__imagens" src="./src/assets/lanches/duasCarnes.jpg" alt="hambuerguer com duas carnes grandes">
         <p class="cardapio__descricao">Sabor em dose dupla com muita suculencia</p>
         <a href="#" class="cardapio__botao-pedir">Pedir</a>
       </section>
 
       <section class="cardapio__itens">
         <h3 class="cardapio__titulo">Clasico</h3>
-        <img class="cardapio__imagens" src="imagens/lanches/classico.jpg"
+        <img class="cardapio__imagens" src="./src/assets/lanches/classico.jpg"
           alt="hambuerguer uma carne alface tomate bacon">
         <p class="cardapio__descricao">Vem de clasico carne ao ponto tomate alface e bacon crocante</p>
         <a href="#" class="cardapio__botao-pedir">Pedir</a>
@@ -73,7 +74,7 @@
 
       <section class="cardapio__itens">
         <h3 class="cardapio__titulo">Mega combo</h3>
-        <img class="cardapio__imagens" src="imagens/lanches/combo.jpg"
+        <img class="cardapio__imagens" src="./src/assets/lanches/combo.jpg"
           alt="hambuerguer com duas carnes e bata frita acopanhando">
         <p class="cardapio__descricao">Se liga nesse combo duas carnes mais batata frita acopanhando</p>
         <a href="#" class="cardapio__botao-pedir">Pedir</a>
@@ -81,7 +82,7 @@
 
       <section class="cardapio__itens">
         <h3 class="cardapio__titulo">Com mozão</h3>
-        <img class="cardapio__imagens" src="imagens/lanches/comMozao.jpg"
+        <img class="cardapio__imagens" src="./src/assets/lanches/comMozao.jpg"
           alt="dois lanches com duas carnes e bata frita acopanhando">
         <p class="cardapio__descricao">Filminho com a namorada pede o com mozão e deixe sua noite mais saborosa</p>
         <a href="#" class="cardapio__botao-pedir">Pedir</a>
@@ -90,16 +91,12 @@
     </section>
   </main>
 
-  <form  class="pedido conteudo" action="">
-    <h3 class="pedido__texto">Ola</h3>
-  </form>
-
   <footer class="rodape">
     <p class="rodape__texto"> </p>
       <a class="rodape__link" href="https://github.com/Nathandiassoares" target="_blank">Nathan dias &copy; </a>
 
   </footer>
 </body>
-<script src="app/main.js"></script>
-<script src="app/script.js"></script>
+<script src="./src/app/main.js"></script>
+<script src="./src/app/script.js"></script>
 </html>
