@@ -1,5 +1,5 @@
 const botaoPedirLanches = document.querySelectorAll('.cardapio__botao-pedir')
-const itens = JSON.parse(localStorage.getItem("itens")) || [] 
+const pedido = JSON.parse(localStorage.getItem("pedido")) || [] 
 
 botaoPedirLanches.forEach((Element)=> {
   Element.addEventListener('click',(event)=> {
@@ -12,25 +12,15 @@ botaoPedirLanches.forEach((Element)=> {
     const descricaoDoLanche = dadosDoLanche.children[2].textContent
     const valorDoLanche = dadosDoLanche.children[4].children[0].textContent
     
-    let lanchePedido = [tiutloDoLanche,imagemDoLanche,descricaoDoLanche,valorDoLanche]
-    
-    const itemAtual = {
+    const caracteristicasDoPedido = {
       "tiutloDoLanche": tiutloDoLanche,
       "imagemDoLanche": imagemDoLanche,
       "descricaoDoLanche":descricaoDoLanche,
       "valorDoLanche":valorDoLanche
     }
     
-    itens.push(itemAtual)
-   
-    
-    
-    localStorage.setItem("itens", JSON.stringify(itens))
-    let lanche = 'lanchePedido'
-    localStorage.setItem(lanche, JSON.stringify(lanchePedido))
-
-   
-  
+    pedido.push(caracteristicasDoPedido)
+    localStorage.setItem("pedido", JSON.stringify(pedido))
   })
 })
 
