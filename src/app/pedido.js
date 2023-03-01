@@ -1,19 +1,11 @@
 const pedido = JSON.parse(localStorage.getItem('pedido'))
 
-pedido.forEach(element => {
-  
-  const count = pedido.reduce((counter, { tiutloDoLanche }) => tiutloDoLanche === element.tiutloDoLanche ? counter += 1 : counter, 0)
-  console.log(count)
-  
-})
-
-
 criaItemDosPedidos()
 
 function criaItemDosPedidos() {
 
-  const criaItemPedido = pedido.map((element) => {
 
+  const criaItemPedido = pedido.map((element,i) => {
     return `
     <seciton class="pedido__item">
     <img class="pedido__imagens" src="../../.${element.imagemDoLanche}" alt="">
@@ -25,9 +17,9 @@ function criaItemDosPedidos() {
     
       <div class="pedido__quantidade">
         <label class="pedido__descricao" for="iquantidade">Qtd:</label>
-        <input class="pedido__quantidade-campo" type="number" name="quantidade" id="iquantidade" value="01">
-        <span class="diminuir">-</span>
-        <span class="adicionar">+</span>
+        <input id="${i}" class="pedido__quantidade-campo" type="number" name="quantidade" id="iquantidade" value="${element.quatidadeDolanche}">
+        <span data-botao class="diminuir">-</span>
+        <span data-botao class="adicionar">+</span>
       </div>
     
       <p class="pedido__descricao">Valor: ${element.valorDoLanche},00 R$</p>
@@ -47,8 +39,78 @@ function criaItemDosPedidos() {
 
   })
 
-
   document.querySelector(".pedido__lista-itens").innerHTML = criaItemPedido
 
-
 }
+
+
+
+const botao = document.querySelectorAll('[data-botao]')
+let quantidadeDoLanche = 1
+console.log(quantidadeDoLanche)
+
+
+botao.forEach((element)=>{
+  let quantidadeAtual = element.parentNode.children[1].value
+  let quatidadeConvertida = Number(quantidadeAtual)
+  let teste = element.parentNode.children[1]
+  
+  element.addEventListener('click',()=>{
+    if(element.classList == 'adicionar'){
+      quatidadeConvertida = quatidadeConvertida + 1
+     teste.value = quatidadeConvertida
+    }else{
+      quatidadeConvertida = quatidadeConvertida - 1
+      teste.value = quatidadeConvertida
+    }
+    const indice = element.parentNode.children[1].id
+    const minhaChave = "pedido"
+    const minhaString = localStorage.getItem(minhaChave)
+    const meuObjeto = JSON.parse(minhaString)
+    let valorAntigo = meuObjeto[indice].quatidadeDolanche
+    console.log(minhaString)
+    console.log(meuObjeto)
+    console.log(valorAntigo)
+    
+    const minhaNovaString = JSON.stringify(20);
+    localStorage.setItem(valorAntigo, minhaNovaString);
+
+  })
+
+ 
+})
+
+
+// const alterQuantidade = document.querySelectorAll('.pedido__quantidade-campo')
+// alterQuantidade.forEach((element)=>{
+//   element.addEventListener('click',(event)=>{
+//     element.value = 10
+//     console.log(element.value)
+//   })
+// })
+
+
+
+
+
+// const botaoAumentar = document.querySelector('.adicionar')
+// const botaoDiminuir = document.querySelector('.diminuir')
+
+// let quantidadeDoLanche = document.querySelector('.pedido__quantidade-campo').value = 1
+// const mudarquantidade = document.querySelector('.pedido__quantidade-campo')
+
+// botaoDiminuir.addEventListener('click',()=> {
+//   if(quantidadeDoLanche == 2 || quantidadeDoLanche >= 2 ){
+//     quantidadeDoLanche = quantidadeDoLanche  -1
+//     mudarquantidade.value = quantidadeDoLanche
+//   }
+// })
+// botaoAumentar.addEventListener('click',(element)=> {
+//   console.log(element)
+//   if(quantidadeDoLanche >= 1 ) {
+//     quantidadeDoLanche++
+//     mudarquantidade.value = quantidadeDoLanche
+    
+    
+//   }
+// })
