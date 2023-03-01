@@ -66,14 +66,16 @@ botao.forEach((element)=>{
     const indice = element.parentNode.children[1].id
     const minhaChave = "pedido"
     const minhaString = localStorage.getItem(minhaChave)
-    const meuObjeto = JSON.parse(minhaString)
+    let meuObjeto = JSON.parse(minhaString)
     let valorAntigo = meuObjeto[indice].quatidadeDolanche
     console.log(minhaString)
     console.log(meuObjeto)
     console.log(valorAntigo)
     
-    const minhaNovaString = JSON.stringify(20);
-    localStorage.setItem(valorAntigo, minhaNovaString);
+    meuObjeto[0].quatidadeDolanche = quatidadeConvertida 
+
+    const minhaNovaString = JSON.stringify(meuObjeto);
+    localStorage.setItem(minhaChave,minhaNovaString);
 
   })
 
