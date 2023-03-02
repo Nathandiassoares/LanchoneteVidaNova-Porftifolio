@@ -17,6 +17,7 @@ botaoPedirLanches.forEach((Element) => {
       "imagemDoLanche": imagemDoLanche,
       "descricaoDoLanche": descricaoDoLanche,
       "valorDoLanche": valorDoLanche,
+      "valorUnitarioDoLanche":valorDoLanche,
       "quatidadeDolanche": 1
     }
 

@@ -5,7 +5,7 @@ criaItemDosPedidos()
 function criaItemDosPedidos() {
 
 
-  const criaItemPedido = pedido.map((element,i) => {
+  const criaItemPedido = pedido.map((element, i) => {
     return `
     <seciton class="pedido__item">
     <img class="pedido__imagens" src="../../.${element.imagemDoLanche}" alt="">
@@ -22,7 +22,7 @@ function criaItemDosPedidos() {
         <span data-botao class="adicionar">+</span>
       </div>
     
-      <p class="pedido__descricao">Valor: ${element.valorDoLanche},00 R$</p>
+      <p class="pedido__descricao">Valor: <span class"AlterarValor">${element.valorDoLanche}</span>,00 R$</p>
     
     </section>
     <span class="pedido__remover-item">
@@ -47,72 +47,60 @@ function criaItemDosPedidos() {
 
 const botao = document.querySelectorAll('[data-botao]')
 let quantidadeDoLanche = 1
-console.log(quantidadeDoLanche)
 
 
-botao.forEach((element)=>{
-  let quantidadeAtual = element.parentNode.children[1].value
-  let quatidadeConvertida = Number(quantidadeAtual)
-  let teste = element.parentNode.children[1]
-  
-  element.addEventListener('click',()=>{
-    if(element.classList == 'adicionar'){
-      quatidadeConvertida = quatidadeConvertida + 1
-     teste.value = quatidadeConvertida
-    }else{
+
+botao.forEach((element) => {
+  function alterarQuantidadeDolanche() {
+    elementoDaquantidadeDoLanche.value = quatidadeConvertida
+    return
+  }
+
+  let quatidadeConvertida = Number(element.parentNode.children[1].value)
+  const elementoDaquantidadeDoLanche = element.parentNode.children[1]
+  const elementoDoValorAlteradoDoLanche = element.parentNode.parentNode.children[3].children[0]
+
+  element.addEventListener('click', () => {
+
+
+let teste = Number(element.parentNode.children[1].value)
+console.log(teste)
+    if (element.classList == 'adicionar' && quatidadeConvertida > 0) {
+      quatidadeConvertida++
+      alterarQuantidadeDolanche()
+    } else if (element.classList == 'diminuir' && quatidadeConvertida > 1) {
+
       quatidadeConvertida = quatidadeConvertida - 1
-      teste.value = quatidadeConvertida
-    }
-    const indice = element.parentNode.children[1].id
+      alterarQuantidadeDolanche()
+    } 
+
+    const indiceDoElemento = element.parentNode.children[1].id
     const minhaChave = "pedido"
     const minhaString = localStorage.getItem(minhaChave)
     let meuObjeto = JSON.parse(minhaString)
-    let valorAntigo = meuObjeto[indice].quatidadeDolanche
-    console.log(minhaString)
-    console.log(meuObjeto)
-    console.log(valorAntigo)
-    
-    meuObjeto[0].quatidadeDolanche = quatidadeConvertida 
+    let valorAntigo = meuObjeto[indiceDoElemento].quatidadeDolanche
+
+    meuObjeto[indiceDoElemento].quatidadeDolanche = quatidadeConvertida
+
+
+
+    let valorAlteradoDolanche = Number(meuObjeto[indiceDoElemento].valorUnitarioDoLanche) * quatidadeConvertida
+    meuObjeto[indiceDoElemento].valorDoLanche = valorAlteradoDolanche
+    elementoDoValorAlteradoDoLanche.innerHTML = valorAlteradoDolanche
+
+
+
+
+
 
     const minhaNovaString = JSON.stringify(meuObjeto);
-    localStorage.setItem(minhaChave,minhaNovaString);
+    localStorage.setItem(minhaChave, minhaNovaString);
+
+
 
   })
 
- 
+
 })
 
 
-// const alterQuantidade = document.querySelectorAll('.pedido__quantidade-campo')
-// alterQuantidade.forEach((element)=>{
-//   element.addEventListener('click',(event)=>{
-//     element.value = 10
-//     console.log(element.value)
-//   })
-// })
-
-
-
-
-
-// const botaoAumentar = document.querySelector('.adicionar')
-// const botaoDiminuir = document.querySelector('.diminuir')
-
-// let quantidadeDoLanche = document.querySelector('.pedido__quantidade-campo').value = 1
-// const mudarquantidade = document.querySelector('.pedido__quantidade-campo')
-
-// botaoDiminuir.addEventListener('click',()=> {
-//   if(quantidadeDoLanche == 2 || quantidadeDoLanche >= 2 ){
-//     quantidadeDoLanche = quantidadeDoLanche  -1
-//     mudarquantidade.value = quantidadeDoLanche
-//   }
-// })
-// botaoAumentar.addEventListener('click',(element)=> {
-//   console.log(element)
-//   if(quantidadeDoLanche >= 1 ) {
-//     quantidadeDoLanche++
-//     mudarquantidade.value = quantidadeDoLanche
-    
-    
-//   }
-// })
