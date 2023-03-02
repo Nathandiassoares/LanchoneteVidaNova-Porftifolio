@@ -51,29 +51,31 @@ let quantidadeDoLanche = 1
 
 
 botao.forEach((element) => {
-  function alterarQuantidadeDolanche() {
-    elementoDaquantidadeDoLanche.value = quatidadeConvertida
-    return
-  }
-
-  let quatidadeConvertida = Number(element.parentNode.children[1].value)
+  
+  
   const elementoDaquantidadeDoLanche = element.parentNode.children[1]
   const elementoDoValorAlteradoDoLanche = element.parentNode.parentNode.children[3].children[0]
-
+ 
   element.addEventListener('click', () => {
-
-
-let teste = Number(element.parentNode.children[1].value)
-console.log(teste)
+    function alterarQuantidadeDolanche() {
+      elementoDaquantidadeDoLanche.value = quatidadeConvertida
+      return
+    }
+    let quatidadeConvertida = Number(element.parentNode.children[1].value)
+    console.log(quatidadeConvertida)
     if (element.classList == 'adicionar' && quatidadeConvertida > 0) {
-      quatidadeConvertida++
+      console.log(quatidadeConvertida,"true")
+      quatidadeConvertida = quatidadeConvertida + 1
       alterarQuantidadeDolanche()
-    } else if (element.classList == 'diminuir' && quatidadeConvertida > 1) {
-
+      
+      
+    } if(element.classList == 'diminuir' && quatidadeConvertida >= 2){
+      
+      console.log(quatidadeConvertida,"false")
       quatidadeConvertida = quatidadeConvertida - 1
       alterarQuantidadeDolanche()
     } 
-
+    console.log(quatidadeConvertida)
     const indiceDoElemento = element.parentNode.children[1].id
     const minhaChave = "pedido"
     const minhaString = localStorage.getItem(minhaChave)
@@ -82,21 +84,12 @@ console.log(teste)
 
     meuObjeto[indiceDoElemento].quatidadeDolanche = quatidadeConvertida
 
-
-
     let valorAlteradoDolanche = Number(meuObjeto[indiceDoElemento].valorUnitarioDoLanche) * quatidadeConvertida
     meuObjeto[indiceDoElemento].valorDoLanche = valorAlteradoDolanche
     elementoDoValorAlteradoDoLanche.innerHTML = valorAlteradoDolanche
 
-
-
-
-
-
-    const minhaNovaString = JSON.stringify(meuObjeto);
-    localStorage.setItem(minhaChave, minhaNovaString);
-
-
+    const minhaNovaString = JSON.stringify(meuObjeto)
+    localStorage.setItem(minhaChave, minhaNovaString)
 
   })
 
