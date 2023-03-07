@@ -6,10 +6,11 @@ input[type=number]::-webkit-outer-spin-button,
   -webkit-appearance: none;
 }
 
-
 /* Conteudo principal  */
 .pedido {
   display: flex;
+  flex-direction: column;
+  padding: 1rem;
   min-height: 100vh;
   background-image: linear-gradient(190deg, #fad54f 0%, #e66317 100%);
 }
@@ -17,8 +18,8 @@ input[type=number]::-webkit-outer-spin-button,
 /* fechar pedido */
 
 .pedido__fechar-pedido {
-  width: 22rem;
-  height: 22rem;
+  width: 100%;
+  height: 12rem;
   margin: 1rem auto;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.337);
   padding: 1rem;
@@ -42,6 +43,7 @@ input[type=number]::-webkit-outer-spin-button,
   background-color: #c25313;
 }
 
+
 /* lista de itens a serem comprados  */
 .pedido__titulo{
   color: white;
@@ -51,12 +53,14 @@ input[type=number]::-webkit-outer-spin-button,
 }
 
 .pedido__lista {
-  width: 57rem;
-  margin: 1rem;
+  width:100%;
+  height: 100%;
+  margin: auto;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.337);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-
-
 
 .pedido__imagens {
   width: 10rem;
@@ -69,6 +73,8 @@ input[type=number]::-webkit-outer-spin-button,
 
 .pedido__item {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
   width: 90%;
   border-top: 1px solid #9e4613;
@@ -86,6 +92,7 @@ input[type=number]::-webkit-outer-spin-button,
   height: 10rem;
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content:space-around;
 }
@@ -117,9 +124,10 @@ input[type=number]::-webkit-outer-spin-button,
 
 .pedido__descricao {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.555);
+  text-align: center;
 }
 
 .diminuir,
@@ -133,6 +141,49 @@ input[type=number]::-webkit-outer-spin-button,
 
 
 .pedido__remover-item {
+  width: 100%;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
 }
 
+
+
+@media screen and (min-width:900px) {
+
+.pedido {
+  flex-direction: row;
+  padding: 1rem;
+}
+
+.pedido__item {
+  flex-direction: row;
+}
+.pedido__imagens {
+ order: -1;
+}
+
+.pedido__remover-item {
+  width: 50px;
+  order: 2; 
+  margin-bottom: 10rem;
+}
+
+.pedido__caracteristicas {
+  
+  width: 40rem;
+  order: 1;
+}
+
+  .pedido__lista {
+     width: 70%;
+     margin: 1rem;
+     order: -1;
+  }
+
+  .pedido__fechar-pedido {
+    width: 30%;
+    height: 20rem;
+  }
+
+}
