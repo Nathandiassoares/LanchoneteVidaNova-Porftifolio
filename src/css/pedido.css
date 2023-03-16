@@ -147,7 +147,9 @@ input[type=number]::-webkit-outer-spin-button,
   justify-content: flex-end;
 }
 
-
+.excluirItem {
+  display: none;
+}
 
 @media screen and (min-width:900px) {
 

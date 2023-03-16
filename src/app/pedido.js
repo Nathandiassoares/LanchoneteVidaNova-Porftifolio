@@ -4,7 +4,6 @@ criaItemDosPedidos()
 
 function criaItemDosPedidos() {
 
-
   const criaItemPedido = pedido.map((element, i) => {
     return `
     <seciton class="pedido__item">
@@ -37,13 +36,11 @@ function criaItemDosPedidos() {
     </seciton>
       
     `
-
   })
 
   document.querySelector(".pedido__lista-itens").innerHTML = criaItemPedido
 
 }
-
 
 
 const botao = document.querySelectorAll('[data-botao]')
@@ -52,13 +49,12 @@ let quantidadeDoLanche = 1
 
 
 botao.forEach((element) => {
-  
-  
+
   const elementoDaquantidadeDoLanche = element.parentNode.children[1]
   const elementoDoValorAlteradoDoLanche = element.parentNode.parentNode.children[3].children[0]
- 
-  element.addEventListener('click', () => {
 
+  element.addEventListener('click', () => {
+  
     function alterarQuantidadeDolanche() {
       elementoDaquantidadeDoLanche.value = quatidadeConvertida
       return
@@ -70,12 +66,12 @@ botao.forEach((element) => {
 
       quatidadeConvertida = quatidadeConvertida + 1
       alterarQuantidadeDolanche()
-    } if(element.classList == 'diminuir' && quatidadeConvertida >= 2){
+    } if (element.classList == 'diminuir' && quatidadeConvertida >= 2) {
 
       quatidadeConvertida = quatidadeConvertida - 1
       alterarQuantidadeDolanche()
-    } 
-    
+    }
+   
     const indiceDoElemento = element.parentNode.children[1].id
     const minhaChave = "pedido"
     const minhaString = localStorage.getItem(minhaChave)
@@ -90,10 +86,70 @@ botao.forEach((element) => {
 
     const minhaNovaString = JSON.stringify(meuObjeto)
     localStorage.setItem(minhaChave, minhaNovaString)
-
+    altera()
   })
+
 
 
 })
 
+const removerPedido = document.querySelectorAll('.pedido__remover-item')
+
+
+removerPedido.forEach((element) => {
+
+  element.addEventListener('click', (event) => {
+    
+    const quantidadeDolancheRemovido = element.parentNode.children[2].children[2].children[1]
+    quantidadeDolancheRemovido.value = quantidadeDolancheRemovido - quantidadeDolancheRemovido
+
+    const valorDoLancheRemovido = element.parentNode.children[2].children[3].children[0]
+    const valorDoLancheRemovidoConvertido = Number(valorDoLancheRemovido.textContent) 
+    valorDoLancheRemovido.innerHTML = valorDoLancheRemovidoConvertido - valorDoLancheRemovidoConvertido
+    
+
+    const elementoClicado = element.parentNode
+    const tituloParaIndentificarIndex = element.parentNode.children[2].children[0].textContent
+    const minhaChave = "pedido"
+    const minhaString = localStorage.getItem(minhaChave)
+    let meuObjeto = JSON.parse(minhaString)
+    const indexDoItemRemovido = meuObjeto.findIndex(pedido => pedido.tiutloDoLanche === tituloParaIndentificarIndex)
+
+    meuObjeto.splice(indexDoItemRemovido, 1)
+
+    const minhaNovaString = JSON.stringify(meuObjeto)
+    localStorage.setItem(minhaChave, minhaNovaString)
+
+    elementoClicado.classList.add("excluirItem")
+    altera()
+  })
+})
+
+altera()
+
+function altera() {
+  const valorTotalDosPedidos = document.querySelector('.pedido__itens-titulo')
+  const quantidadeTotalDosPedidos = document.querySelectorAll('.pedido__quantidade-campo')
+  const valorPagoDosPedidos = document.querySelectorAll('.pedido__item')
+  let array = []
+  let conjutoDosValores = []
+
+  quantidadeTotalDosPedidos.forEach((element) => {
+    let soma = Number(element.value)
+    array.push(soma)
+  })
+  total = array.reduce((acumulado, numero) => acumulado + numero, 0)
+
+valorPagoDosPedidos.forEach((element) => {
+  const valoresDosLanches = Number(element.children[2].children[3].children[0].textContent)
+  conjutoDosValores.push(valoresDosLanches)
+})
+totalDosValores = conjutoDosValores.reduce((acumulado,numero)=> acumulado + numero, 0)
+
+  valorTotalDosPedidos.innerHTML =
+    `
+    <h3 class="pedido__itens-titulo">Subtotal(${total} itens): ${totalDosValores},00R$</h3>
+    `
+  return
+}
 
