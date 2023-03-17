@@ -87,6 +87,7 @@ botao.forEach((element) => {
     const minhaNovaString = JSON.stringify(meuObjeto)
     localStorage.setItem(minhaChave, minhaNovaString)
     altera()
+    requisitoParaFrete()
   })
 
 
@@ -122,6 +123,7 @@ removerPedido.forEach((element) => {
 
     elementoClicado.classList.add("excluirItem")
     altera()
+    requisitoParaFrete()
   })
 })
 
@@ -152,4 +154,17 @@ totalDosValores = conjutoDosValores.reduce((acumulado,numero)=> acumulado + nume
     `
   return
 }
+requisitoParaFrete()
 
+function requisitoParaFrete() {
+  const alteraFrete = document.querySelector('[data-FreteGratis]')
+  const nomeDaClassFrete = alteraFrete.className
+  console.log(nomeDaClassFrete)
+  
+  if(totalDosValores >= 80 && nomeDaClassFrete == "pedido__descricao Frete"){
+   alteraFrete.classList.remove("Frete")
+  }else {
+    alteraFrete.classList.add("Frete")
+  }
+  return
+}
