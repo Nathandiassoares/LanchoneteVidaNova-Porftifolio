@@ -23,7 +23,7 @@ function criaItemDosPedidos() {
     
       <div class="pedido__quantidade">
         <label class="pedido__descricao" for="iquantidade">Qtd:</label>
-        <input id="${i}" class="pedido__quantidade-campo" type="number" name="quantidade" id="iquantidade" value="${element.quatidadeDolanche}">
+        <input id="${i}" class="pedido__quantidade-campo" type="number"  name="quantidade" id="iquantidade" value="${element.quatidadeDolanche}" readonly>
         <span data-botao class="diminuir">-</span>
         <span data-botao class="adicionar">+</span>
       </div>
