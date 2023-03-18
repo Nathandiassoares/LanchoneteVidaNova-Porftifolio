@@ -28,7 +28,7 @@ function criaItemDosPedidos() {
         <span data-botao class="adicionar">+</span>
       </div>
     
-      <p class="pedido__descricao">Valor: <span class"AlterarValor">${element.valorDoLanche}</span>,00 R$</p>
+      <p class="pedido__descricao">Valor: <span class="AlterarValor">${element.valorDoLanche}</span>,00 R$</p>
     
     </section>
     
@@ -71,21 +71,22 @@ botao.forEach((element) => {
       quatidadeConvertida = quatidadeConvertida - 1
       alterarQuantidadeDolanche()
     }
-   
-    const indiceDoElemento = element.parentNode.children[1].id
+    const tituloParaIndentificarIndex = element.parentNode.parentNode.children[0].textContent
+    // const indiceDoElemento = element.parentNode.children[1].id
     const minhaChave = "pedido"
     const minhaString = localStorage.getItem(minhaChave)
     let meuObjeto = JSON.parse(minhaString)
-    let valorAntigo = meuObjeto[indiceDoElemento].quatidadeDolanche
+    const indexDoItemClicado = meuObjeto.findIndex(pedido => pedido.tiutloDoLanche === tituloParaIndentificarIndex)
+   
+    meuObjeto[indexDoItemClicado].quatidadeDolanche = quatidadeConvertida
 
-    meuObjeto[indiceDoElemento].quatidadeDolanche = quatidadeConvertida
-
-    let valorAlteradoDolanche = Number(meuObjeto[indiceDoElemento].valorUnitarioDoLanche) * quatidadeConvertida
-    meuObjeto[indiceDoElemento].valorDoLanche = valorAlteradoDolanche
+    let valorAlteradoDolanche = Number(meuObjeto[indexDoItemClicado].valorUnitarioDoLanche) * quatidadeConvertida
+    meuObjeto[indexDoItemClicado].valorDoLanche = valorAlteradoDolanche
     elementoDoValorAlteradoDoLanche.innerHTML = valorAlteradoDolanche
 
-    const minhaNovaString = JSON.stringify(meuObjeto)
+    const minhaNovaString = JSON.stringify(meuObjeto) 
     localStorage.setItem(minhaChave, minhaNovaString)
+    
     altera()
     requisitoParaFrete()
   })
@@ -154,16 +155,16 @@ totalDosValores = conjutoDosValores.reduce((acumulado,numero)=> acumulado + nume
     `
   return
 }
+
 requisitoParaFrete()
 
 function requisitoParaFrete() {
   const alteraFrete = document.querySelector('[data-FreteGratis]')
   const nomeDaClassFrete = alteraFrete.className
-  console.log(nomeDaClassFrete)
   
-  if(totalDosValores >= 80 && nomeDaClassFrete == "pedido__descricao Frete"){
+  if(totalDosValores >= 80 || nomeDaClassFrete == "pedido__descricao Frete"){
    alteraFrete.classList.remove("Frete")
-  }else {
+  }if(totalDosValores < 80) {
     alteraFrete.classList.add("Frete")
   }
   return
