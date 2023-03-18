@@ -28,7 +28,7 @@ function criaItemDosPedidos() {
         <span data-botao class="adicionar">+</span>
       </div>
     
-      <p class="pedido__descricao">Valor: <span class="AlterarValor">${element.valorDoLanche}</span>,00 R$</p>
+      <p class="pedido__descricao">Valor: R$ <span class="AlterarValor">${element.valorDoLanche}</span>,00</p>
     
     </section>
     
@@ -151,7 +151,7 @@ totalDosValores = conjutoDosValores.reduce((acumulado,numero)=> acumulado + nume
 
   valorTotalDosPedidos.innerHTML =
     `
-    <h3 class="pedido__itens-titulo">Subtotal(${total} itens): ${totalDosValores},00R$</h3>
+    <h3 class="pedido__itens-titulo">Subtotal(${total} itens):R$ ${totalDosValores},00</h3>
     `
   return
 }
