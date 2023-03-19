@@ -27,12 +27,11 @@ function criaItemDosPedidos() {
         <span data-botao class="diminuir">-</span>
         <span data-botao class="adicionar">+</span>
       </div>
-    
+
       <p class="pedido__descricao">Valor: R$ <span class="AlterarValor">${element.valorDoLanche}</span>,00</p>
     
     </section>
     
-          
     </seciton>
       
     `
@@ -72,7 +71,6 @@ botao.forEach((element) => {
       alterarQuantidadeDolanche()
     }
     const tituloParaIndentificarIndex = element.parentNode.parentNode.children[0].textContent
-    // const indiceDoElemento = element.parentNode.children[1].id
     const minhaChave = "pedido"
     const minhaString = localStorage.getItem(minhaChave)
     let meuObjeto = JSON.parse(minhaString)
@@ -109,7 +107,6 @@ removerPedido.forEach((element) => {
     const valorDoLancheRemovidoConvertido = Number(valorDoLancheRemovido.textContent) 
     valorDoLancheRemovido.innerHTML = valorDoLancheRemovidoConvertido - valorDoLancheRemovidoConvertido
     
-
     const elementoClicado = element.parentNode
     const tituloParaIndentificarIndex = element.parentNode.children[2].children[0].textContent
     const minhaChave = "pedido"

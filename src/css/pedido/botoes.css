@@ -1,0 +1,29 @@
+.diminuir,
+.adicionar {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.555);
+  cursor: pointer;
+}
+
+.pedido__remover-item {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.excluirItem {
+  display: none;
+}
+
+@media screen and (min-width:900px) {
+  .pedido__remover-item {
+    width: 50px;
+    order: 2; 
+    margin-bottom: 10rem;
+  }
+  
+  }
+

@@ -1,0 +1,5 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+.pedido__quantidade-campo {
+  -webkit-appearance: none;
+}

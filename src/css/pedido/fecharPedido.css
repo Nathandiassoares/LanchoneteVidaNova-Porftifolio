@@ -1,0 +1,34 @@
+.pedido__fechar-pedido {
+  width: 100%;
+  height: 12rem;
+  margin: 1rem auto;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.337);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pedido__botao-fecharPedido {
+  font-size: 2rem;
+  padding: .5rem;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color:#e66317;
+  transition: .2s;
+}
+
+.pedido__botao-fecharPedido:hover {
+  cursor: pointer;
+  background-color: #c25313;
+}
+
+@media screen and (min-width:900px) {
+
+    .pedido__fechar-pedido {
+      width: 30%;
+      height: 20rem;
+    }
+  
+  }
