@@ -31,15 +31,25 @@
   text-align: end;
 }
 
-.painel__lista-iten {
+.painel__lista-iten,
+.painel__lista-link {
   border-bottom: 2px solid white;
   font-size: 1.2rem;
   margin-right: 1rem;
-}
-
-.painel__lista-link {
   text-decoration: none;
   color: white;
+  transition: 1s;
+  padding: .3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.39);
+}
+
+.painel__lista-iten:hover{
+  background-color: white;
+}
+.painel__lista-link:hover {
+  text-shadow: none;
+  color: rgba(218, 132, 40, 0.979);
 }
 
 @media screen and (max-width:900px) {
