@@ -12,7 +12,11 @@ Projeto criado para testar meus conhecimentos e utilizar em meu portfólio. Foi 
 
 - Design Responsivo: Todas as páginas estão com design responsivo, o que facilita para o usuário em diversas telas, especialmente em dispositivos móveis.
 
-- Página de Redes Sociais: Design simples, mas com autoria própria do SVG das redes sociais, onde pego o ícone do GitHub e faço a interligação das redes.
+- Página de Redes Sociais:
+
+![Redes Sociais](https://exemplo.com/imagem_redes_sociais.png)
+
+Design simples, mas com autoria própria do SVG das redes sociais, onde pego o ícone do GitHub e faço a interligação das redes. (Arquivo `redes-sociais.svg`)
 
 ## Futuro do Projeto
 
