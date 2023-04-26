@@ -1,4 +1,5 @@
-# Lanchonete Vida Nova
+# Lanchonete Vida Nova <img src="https://lanchonete-vida-nova-porftifolio.vercel.app/src/assets/icon/icone.png" alt="Logo da lanchonete" width="50" height="50">
+
 
 Projeto criado para testar meus conhecimentos e utilizar em meu portfólio. Foi um desafio, pois foi meu primeiro projeto utilizando JavaScript, onde tive que criar toda a estrutura do UI e do código.
 
