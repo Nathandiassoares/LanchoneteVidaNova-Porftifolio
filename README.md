@@ -7,7 +7,7 @@ Projeto criado para testar meus conhecimentos e utilizar em meu portfólio. Foi 
 
 - Página de lanches: O cliente pode pesquisar seu lanche favorito em um campo de pesquisa simples, baseado no título como valor, onde é transformado para padrão e comparado com o que o usuário está digitando no campo de pesquisa. É então habilitado um `display = none` para esconder o que não corresponde com a pesquisa. (Arquivo `main.js`)
 
-- Armazenamento de pedidos: O arquivo `script.js` também corresponde à página inicial, mas sua funcionalidade é gravar os dados coletados quando o cliente faz um pedido em um objeto. Antes de ser armazenado no Local Storage, é feita uma validação para evitar itens duplicados.
+- Armazenamento de pedidos: O arquivo `script.js` também corresponde à página lanches, mas sua funcionalidade é gravar os dados coletados quando o cliente faz um pedido em um `objeto javascript`. Antes de ser armazenado no Local Storage, é feita uma validação para evitar itens duplicados.
 
 - Página de pedido: No arquivo `pedido.js`, são coletados os dados do Local Storage e passados para o método `map`, que com base nas características mostra o que o cliente escolheu. Para uma experiência completa do cliente, ele pode aumentar a quantidade, remover itens, fazer soma automática de valores, entre outras modificações. Todas as modificações são gravadas, então não há perda de dados ao recarregar a página.
 
