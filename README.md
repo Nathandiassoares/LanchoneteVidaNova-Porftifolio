@@ -14,8 +14,8 @@ Projeto criado para testar meus conhecimentos e utilizar em meu portfólio. Foi 
 
 - Página de Redes Sociais:
 
-![Redes Sociais]
-<img src="https://lanchonete-vida-nova-porftifolio.vercel.app/src/assets/fundo/redes.svg" alt="SVG da logo rede sociais" width="80" height="80">
+
+<img src="https://lanchonete-vida-nova-porftifolio.vercel.app/src/assets/fundo/redes.svg" alt="SVG da logo rede sociais" width="200" height="200">
 
 Design simples, mas com autoria própria do SVG das redes sociais, onde pego o ícone do GitHub e faço a interligação das redes. (Arquivo `redes-sociais.svg`)
 
