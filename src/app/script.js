@@ -28,12 +28,9 @@ botaoPedirLanches.forEach((Element) => {
     })
     const verdade = titulosDosPedidos.find(titulo => titulo == tiutloDoLanche)
 
-    console.log(titulosDosPedidos.length)
     if(titulosDosPedidos.length == 0 || verdade != tiutloDoLanche){
       pedido.push(caracteristicasDoPedido)
     }
-    
-
     
     localStorage.setItem("pedido", JSON.stringify(pedido))
   })
